@@ -6,9 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <?php wp_head(); ?>
 </head>
 <body>
@@ -29,14 +26,16 @@
         <?php if (have_posts()): ?>
           <?php foreach (get_pages() as $page): ?>
             <li class="nav-item">
-              <a class="nav-link" href="<?php print $page->guid; ?>"><?php print $page->post_title; ?></a>
+              <!-- <a class="nav-link" href="<?php //print $page->guid; ?>"><?php// print $page->post_title; ?></a> -->
+              <p class="nav-link"><?php print $page->post_title; ?></p>
             </li>
+
+
+
             <?php endforeach; ?>
         <?php endif; ?>
-
       </ul>
     </div>
   </nav>
-
 
   <main class="container">

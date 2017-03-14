@@ -15,4 +15,19 @@
 
     </div>
   </div>
+
+
+
+<script>
+let navbar = document.querySelectorAll(".nav-link");
+Array.from(navbar).forEach(function(ele) {
+  console.log(ele);
+  ele.addEventListener("click", function() {
+    ele.className += " active";
+  })
+});
+</script>
+
+
+
 <?php get_footers(); ?>
