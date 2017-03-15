@@ -26,12 +26,8 @@
         <?php if (have_posts()): ?>
           <?php foreach (get_pages() as $page): ?>
             <li class="nav-item">
-              <!-- <a class="nav-link" href="<?php //print $page->guid; ?>"><?php// print $page->post_title; ?></a> -->
-              <p class="nav-link"><?php print $page->post_title; ?></p>
+              <a class="nav-link <?php (get_the_title() === $page->post_title)? print "active" : ""; ?>" href="<?php print $page->guid; ?>"><?php print $page->post_title; ?></a>
             </li>
-
-
-
             <?php endforeach; ?>
         <?php endif; ?>
       </ul>

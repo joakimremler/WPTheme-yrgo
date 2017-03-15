@@ -4,7 +4,7 @@ add_action('after_setup_theme', function() {
 });
 
 
-function add_theme_scripts() {
+function WPThemeYrgo_script_enqueue() {
   //loading style.css
   wp_enqueue_style( 'style', get_stylesheet_uri() );
 
@@ -16,14 +16,9 @@ function add_theme_scripts() {
   wp_enqueue_script( 'tether.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js' );
   wp_enqueue_script( 'bootstrap.min.js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js' );
 
-  // wp_register_script('main.js', plugins_url('main.js', _FILE_), array('jquery'), '1.1', true);
-	// wp_enqueue_script('main.js');
-  // wp_enqueue_script( 'main.js', 'http://localhost/Skola/projekt/wordpress//wp-content/themes/WPTheme-yrgo/main.js' );
-    // wp_enqueue_script( 'main.js', get_template_directory_uri() . 'main.js', array(), '1', true );
- // wp_enqueue_script( 'main.js', plugin_dir_url( __FILE__ ) , 'main.js', array( 'jquery' ) );
-
-  // if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-  //     wp_enqueue_script( 'comment-reply' );
-  //   }
+  //loding my main.js script from local directory
+  wp_enqueue_script('main', get_template_directory_uri() . '/main.js', array(), '1.0.0', true);
 }
-add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+
+
+add_action( 'wp_enqueue_scripts', 'WPThemeYrgo_script_enqueue' );
